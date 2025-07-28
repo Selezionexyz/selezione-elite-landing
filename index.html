@@ -11,6 +11,7 @@
       background: #000;
       color: #fff;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
@@ -23,6 +24,11 @@
     }
     .section {
       margin-bottom: 4rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .button {
       background: gold;
@@ -39,23 +45,37 @@
       background: #fff;
       color: #000;
     }
-    .features {
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
-    .feature {
+    .pricing-card {
+      position: relative;
       background: #111;
-      border: 1px solid #333;
-      border-radius: 1rem;
+      border: 2px solid #FFD700;
       padding: 2rem;
-      transition: transform 0.3s ease;
+      border-radius: 1rem;
+      text-align: center;
+      overflow: hidden;
+      animation: neon-border 3s linear infinite;
     }
-    .feature:hover {
-      transform: translateY(-5px);
+    .pricing-card h3 {
+      margin-bottom: 1rem;
     }
     .highlight {
       color: #FFD700;
+    }
+    @keyframes neon-border {
+      0% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+      }
+      50% {
+        box-shadow: 0 0 20px #ff0, 0 0 40px #ff0, 0 0 60px #ff0;
+      }
+      100% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+      }
     }
     @media screen and (max-width: 600px) {
       h1 { font-size: 2rem; }
@@ -71,65 +91,52 @@
     <section class="section">
       <h1>SELEZIONE <span class="highlight">ELITE</span></h1>
       <p style="font-size: 1.2rem;">
-        L’accès professionnel ultime pour les experts de la revente luxe.<br>
-        Fournisseurs exclusifs, remises jusqu’à -50 %, outils IA avancés, coaching stratégique et fichiers confidentiels.
+        Accédez à la solution la plus avancée pour les professionnels du luxe. De l’IA à l'accès fournisseurs en passant par le coaching : tout est inclus, selon votre niveau.
       </p>
-      <a href="#cta" class="button">Demander un Accès Privé</a>
+      <a href="#cta" class="button">Réserver un appel stratégique</a>
     </section><section class="section">
-  <h2>🚀 Pourquoi choisir SELEZIONE ELITE ?</h2>
-  <p>
-    Cette offre est conçue pour faire passer votre activité au niveau supérieur. SELEZIONE ELITE n’est pas un simple SaaS :
-    c’est une solution business clé en main pour générer un véritable retour sur investissement dans l’univers du luxe B2B.
-  </p>
-</section>
+  <h2>💳 Nos Formules</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>⚙️ Formule ESSENTIELLE</h3>
+      <p><strong>1 590 € / an</strong></p>
+      <p>Accès complet au SaaS + Coaching mensuel<br><strong>Sans accès fournisseurs</strong></p>
+    </div>
 
-<section class="section">
-  <h2>📦 Contenu de l'offre</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>Plateforme SaaS Complète</h3>
-      <p>Estimation IA, radar d’opportunités, simulateur, CRM, marketplace, Fichiers & commandes.</p>
+    <div class="pricing-card">
+      <h3>📦 Formule TRIMESTRIELLE</h3>
+      <p><strong>597 € / 3 mois</strong></p>
+      <p>Accès aux fournisseurs (-40 %)<br>Outils IA + Formation partielle<br>Sans engagement</p>
     </div>
-    <div class="feature">
-      <h3>+45 Fournisseurs Privés</h3>
-      <p>Italie, Japon, France. Jusqu’à -50 % sur les prix boutique. Produits vérifiés, rotation rapide.</p>
+
+    <div class="pricing-card">
+      <h3>💎 Formule À VIE (High Ticket)</h3>
+      <p><strong>3 180 € paiement unique</strong></p>
+      <p>Basée sur 10 années d'utilisation à tarif réduit<br><strong>Accès à vie complet</strong> à tous les outils, fichiers, fournisseurs, mises à jour et coachings</p>
     </div>
-    <div class="feature">
-      <h3>7 Modules de Formation</h3>
-      <p>Formation Selezione Academy complète (business, pricing, influence, SAV, logistique).</p>
-    </div>
-    <div class="feature">
-      <h3>12 Coachings Stratégiques</h3>
-      <p>1 appel de démarrage + 1 call/mois avec un expert revente & luxe.</p>
-    </div>
-    <div class="feature">
-      <h3>Fichiers Ultra-Enrichis</h3>
-      <p>Répertoire Farfetch cliquable, étiquettes pro, CRM fournisseurs, simulateurs financiers.</p>
-    </div>
-    <div class="feature">
-      <h3>Commande Test Accompagnée</h3>
-      <p>1 commande guidée en direct avec assistance + accès au template WhatsApp pro de contact boutique.</p>
+
+    <div class="pricing-card">
+      <h3>🚀 Formule NO LIMIT</h3>
+      <p><strong>11 900 €</strong></p>
+      <p>Accès à vie à TOUTES les formules ci-dessus<br><strong>-30 % sur toutes les offres SELEZIONE actuelles et futures</strong><br>Bonus privés & accès anticipés</p>
+      <ul style="text-align:left; margin-top:1rem;">
+        <li>✔ Accès à la Formule ESSENTIELLE (-30%)</li>
+        <li>✔ Accès à la Formule TRIMESTRIELLE (-30%)</li>
+        <li>✔ Accès à la Formule À VIE (-30%)</li>
+        <li>✔ Coaching illimité</li>
+        <li>✔ Invitations aux évènements privés</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>💰 Tarification</h2>
-  <p>
-    <strong class="highlight">3 990 € HT / an</strong> (ou 3 x 1 330 € sans frais)<br>
-    ✅ Paiement sécurisé<br>
-    ✅ Coaching, outils IA, fichiers, accès fournisseurs inclus<br>
-    ✅ Rentabilité attendue : <strong>+10 000 à +50 000 € / an</strong>
-  </p>
-</section>
-
-<section class="section">
+<section class="section" id="cta">
   <h2>🔐 Conditions d’accès</h2>
   <p>
-    - Appel stratégique obligatoire<br>
-    - Signature d’un accord de confidentialité<br>
-    - Accès personnel non transférable<br>
-    - Réservation via Calendly : <a href="https://calendly.com/selezione-elite/30min" target="_blank">Prendre RDV</a>
+    ✔ Appel de validation obligatoire<br>
+    ✔ Signature d’un accord de confidentialité<br>
+    ✔ Accès personnel vérifié (non transférable)<br>
+    ✔ Réservation via Calendly : <a href="https://calendly.com/selezione-elite/30min" target="_blank">Planifier un RDV</a>
   </p>
   <a href="https://calendly.com/selezione-elite/30min" target="_blank" class="button">Réserver un appel stratégique</a>
 </section>
